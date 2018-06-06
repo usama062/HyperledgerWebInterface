@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bitter|PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script type="text/javascript">
+      // request permission on page load
+document.addEventListener('DOMContentLoaded', function () {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.'); 
+    return;
+  }
+
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+});
+
+function notifyMe() {
+  var e = document.getElementById('email').value;
+
+  if (Notification.permission !== "granted")
+    Notification.requestPermission();
+  else {
+    var notification = new Notification('Login Notification', {
+      icon: 'images/logo.png',
+      body: e+" Logged In !",
+    });
+
+    notification.onclick = function () {
+      window.open("http://stackoverflow.com/a/13328397/1269037");      
+    };
+
+  }
+
+}
+    </script>
+
+    <title>System Administrator</title>
+    <style type="text/css">
+      @media(max-width: 580px) {
+      .limg {
+          width: 50% !important;
+
+      }
+      .lbox {
+        text-align: center;
+      }
+    }
+    .ltext {
+      font-family: 'Bitter', serif;
+      font-size: 40px;
+      line-height: 160px;
+      color:#fff;
+    }
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+  line-height: 32px;
+
+  }
+
+
+
+.toggle,
+[id^=drop] {
+  display: none;
+}
+
+/* Giving a background-color to the nav#wot container. */
+nav#wot { 
+  margin:0;
+  padding: 0;
+  background: linear-gradient(#a4de28, #7cae27);
+  z-index: 999;
+  word-wrap:break-word !important;
+  
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav#wot:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav#wot ul {
+  float: left;
+  padding:0;
+  margin:0;
+  list-style: none;
+  position: relative;
+  font-family: 'Raleway', sans-serif;
+  }
+  
+/* Positioning the navigation items inline */
+nav#wot ul li {
+  margin: 0px;
+  display:inline-block;
+  float: left;
+  background: linear-gradient(#a4de28, #7cae27);
+  border-right:1px groove #c0ed90;
+  }
+
+/* Styling the links */
+nav#wot a {
+  display:block;
+  padding:10px 30px;  
+  color:#FFF;
+  font-size:14px;
+  text-decoration:none;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+
+nav#wot ul li ul li:hover { }
+
+/* Background color change on Hover */
+nav#wot a:hover { 
+  border-bottom:5px solid #4f006a;
+  color: #4f006a;
+}
+
+.active {
+  border-bottom:5px solid #4f006a;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav#wot ul ul {
+  display: none;
+  position: absolute; 
+  /* has to be the same number as the "line-height" of "nav#wot a" */
+  top: 50px; 
+}
+  
+/* Display Dropdowns on Hover */
+nav#wot ul li:hover > ul {
+  display:inherit;
+}
+  
+/* Fisrt Tier Dropdown */
+nav#wot ul ul li {
+  width:170px;
+  float:none;
+  display:list-item;
+  position: relative;
+}
+
+/* Second, Third and more Tiers 
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav#wot ul ul ul li {
+  position: relative;
+  top:-60px;
+  /* has to be the same number as the "width" of "nav#wot ul ul li" */ 
+  left:170px; 
+}
+
+  
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ''; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+  #logo {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    float: none;
+  }
+
+  nav#wot {
+    margin: 0;
+  }
+
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: block;
+    background-color: #254441;
+    padding:14px 20px;  
+    color:#FFF;
+    font-size:14px;
+    text-decoration:none;
+    border:none;
+  }
+
+  .toggle:hover {
+    background-color: #028c39;
+  }
+
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^=drop]:checked + ul {
+    display: block;
+  }
+
+  /* Change menu item's width to 100% */
+  nav#wot ul li {
+    display: block;
+    width: 100%;
+    }
+
+  nav#wot ul ul .toggle,
+  nav#wot ul ul a {
+    padding: 0 40px;
+  }
+
+  nav#wot ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav#wot a:hover,
+  nav#wot ul ul ul a {
+    background-color: #028c39;
+  }
+  
+  nav#wot ul li ul li .toggle,
+  nav#wot ul ul a,
+  nav#wot ul ul ul a{
+    padding:14px 20px;  
+    color:#FFF;
+    font-size:14px; 
+  }
+  
+  
+  nav#wot ul li ul li .toggle,
+  nav#wot ul ul a {
+    background-color: #212121; 
+  }
+
+  /* Hide Dropdowns by Default */
+  nav#wot ul ul {
+    float: none;
+    position:static;
+    color: #ffffff;
+    z-index: 99999;
+    /* has to be the same number as the "line-height" of "nav#wot a" */
+  }
+    
+  /* Hide menus on hover */
+  nav#wot ul ul li:hover > ul,
+  nav#wot ul li:hover > ul {
+    display: none;
+  }
+    
+  /* Fisrt Tier Dropdown */
+  nav#wot ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav#wot ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav#wot ul ul li" */ 
+
+  }
+
+}
+
+@media all and (max-width : 330px) {
+
+  nav#wot ul li {
+    display:block;
+    width: 94%;
+  }
+
+}
+
+.footer-cont {
+
+}
+.footer-cont .ftb {
+  height: 80px;
+  line-height: 80px;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+color: #fff;
+  background: linear-gradient(#7d01b2, #4f006a); 
+  text-align: center;
+}
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    
+  <div style="background: linear-gradient(#7d01b2, #4f006a); "> <!-- background: linear-gradient(#690094, #4f006a); -->
+    <div class="container" style=" ">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 hidden-xs lbox" style="padding-top:10px;padding-bottom:10px;"><img class="img-responsive limg"  style="width:100%;" src="images/logo.png" alt="ARV_WI"></div>
+        
+        <div class="col-lg-10 col-md-10 col-sm-10 ltext">ACADEMIC RECORDS VERIFICATION SYSTEM</div>
+      </div>
+    </div>
+  </div>
+
+
+<nav id="wot">
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+                <li><a href="login.html" class="active">LOGIN</a></li>
+                <li><a href="admissionform.html">ADMISSION FORM</a></li>
+                <li><a href="newuser.html">NEW USER</a></li>
+                <li><a href="#">DELETE USER</a></li>
+                <li>
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">CHAINCODE</label>
+                    <a href="#">CHAINCODE &nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="#">UPDATE</a></li>
+                        <li><a href="#">DELETE</a></li>
+                    </ul> 
+
+                </li>
+                
+            </ul>
+        </nav>
+
+<!-- /form start -->
+<div class="" style="background: url('images/bgp.jpg'); background-size: 100%;">
+  <div class="container vertical-center" style="padding-bottom: 50px;padding-top: 50px;">
+    <div style="background:#fff;width:70%;margin: auto;padding-top: 20px;padding:30px 50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+  <form action="" method="POST" class="col-lg-12 col-md-12 col-sm-12">
+    <h3 style="margin-bottom: 20px;">System Administrator</h3>
+
+  <div class="form-group">
+    <label>Add User</label>
+    <input class="form-control" type="file"> 
+  </div>
+
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" id="">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" id="">
+  </div>
+
+  <div class="form-group">
+    <label>Permissions</label>
+    <input class="form-control" type="text">    
+  </div>
+
+  <div class="form-group">
+    <label>Delete User</label>
+    <select class="selectpicker form-control" data-style="btn-primary" >
+        <option data-tokens="ketchup mustard">Huzaifa</option>
+        <option data-tokens="mustard">Shahzaib</option>
+        <option data-tokens="frosting">Rafay</option>
+        <option data-tokens="frosting">usama</option>
+    </select>    
+  </div>
+
+  <div class="form-group">
+    <label>Update User</label>
+    <select class="selectpicker form-control" data-style="btn-primary" >
+        <option data-tokens="ketchup mustard">Huzaifa</option>
+        <option data-tokens="mustard">Shahzaib</option>
+        <option data-tokens="frosting">Rafay</option>
+        <option data-tokens="frosting">usama</option>
+    </select>    
+  </div>
+
+  
+
+
+ 
+  <button type="submit" class="btn btn-primary" onclick="notifyMe()">Submit</button>
+</form>
+</div>
+</div>
+  </div>
+  
+
+
+
+<!-- /form end -->
+
+<div class="container-fluid footer-cont">
+  <div class="row">
+    <div class="ftb col-md-12"><span style="border-bottom: 5px solid #7cae27; padding-bottom: 5px;"> &copy 2018 - Sir Syed University of Engineering and Technology </span></div>
+  </div>
+</div> 
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
