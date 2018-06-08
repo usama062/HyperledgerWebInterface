@@ -15,10 +15,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
         <script type="text/javascript">
+      // request permission on page load
 
     </script>
 
-    <title>Login</title>
+    <title>Template</title>
     <style type="text/css">
       @media(max-width: 580px) {
       .limg {
@@ -333,7 +334,7 @@ color: #fff;
   <div class="container vertical-center" style="padding-bottom: 50px;padding-top: 50px;">
     <div style="background:#fff;width:70%;margin: auto;padding-top: 20px;padding:30px 50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
   <form action="" method="POST" class="col-lg-12 col-md-12 col-sm-12">
-    <h3 style="margin-bottom: 20px;">User Login</h3>
+    <h3 style="margin-bottom: 20px;">Template</h3>
 
   <div class="form-group">
     <label>Email</label>
@@ -350,16 +351,41 @@ color: #fff;
     <input class="form-control" type="file">    
   </div>
 
-
- 
-  <button type="submit" class="btn btn-primary">Login</button>
+<div class="form-group">
+<div id="dynamic" > </div>
+ </div>
+  <!-- <button type="submit" class="btn btn-primary" onclick="generate();">Login</button> -->
 </form>
+  <button type="button" class="btn btn-primary" onclick="generate()">Login</button>
+
 </div>
 </div>
   </div>
   
 
-
+<script type="text/javascript">
+        function generate(){
+            
+            var dym = document.getElementById("dynamic");
+            // while (container.hasChildNodes()) {
+            //     container.removeChild(container.lastChild);
+            // }
+            
+                
+                // dym.appendChild(document.createTextNode("<label>NEW FIELD</label>"));
+                var newlabel = document.createElement("Label");
+newlabel.innerHTML = "Here goes the text";
+dym.appendChild(newlabel);
+                dym.appendChild(document.createElement("br"));
+                var input = document.createElement("input");
+                input.type = "text";
+                input.class = "form-control";
+                
+                dym.appendChild(input);
+                dym.appendChild(document.createElement("br"));
+            
+        }
+</script>
 
 <!-- /form end -->
 
