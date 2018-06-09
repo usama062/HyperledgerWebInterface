@@ -287,7 +287,9 @@ color: #fff;
   text-align: center;
 }
 
-
+.democlass{
+  background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(66, 133, 244,.6), rgba(0,0,0,0));
+}
 
 
 
@@ -351,40 +353,108 @@ color: #fff;
     <input class="form-control" type="file">    
   </div>
 
-<div class="form-group">
-<div id="dynamic" > </div>
+<div >
+<div id="dynamic" class="form-group" > </div>
+<div id="sub" class="form-group" > </div>
+
  </div>
   <!-- <button type="submit" class="btn btn-primary" onclick="generate();">Login</button> -->
+  <button type="button" class="btn btn-primary" data-target="#myModal" data-toggle="modal">Create Field</button>
+  <button type="button" class="btn btn-primary" onclick="generate_subject();">Create Subject</button>
+
 </form>
-  <button type="button" class="btn btn-primary" onclick="generate()">Login</button>
+  
 
 </div>
 </div>
   </div>
-  
+
+<!-- Modal for new field-->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="">Enter Field name</h4><button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <input id="label" class="form-control" type="text" name="field">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="generate(label);" data-dismiss="modal">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Modal for new field end -->
 
 <script type="text/javascript">
-        function generate(){
-            
+
+  var abc ="";
+
+
+        function generate(label){
+          
             var dym = document.getElementById("dynamic");
             // while (container.hasChildNodes()) {
             //     container.removeChild(container.lastChild);
             // }
             
-                
+            var get = document.getElementById("label").value;
                 // dym.appendChild(document.createTextNode("<label>NEW FIELD</label>"));
                 var newlabel = document.createElement("Label");
-newlabel.innerHTML = "Here goes the text";
+newlabel.innerHTML = get;
 dym.appendChild(newlabel);
                 dym.appendChild(document.createElement("br"));
                 var input = document.createElement("input");
                 input.type = "text";
-                input.class = "form-control";
+                input.classList.add("form-control");
                 
+                dym.class = "form-control";
                 dym.appendChild(input);
                 dym.appendChild(document.createElement("br"));
+
+                document.getElementById("label").value = "";
+
             
         }
+
+
+        function generate_subject(){
+          
+            var dym = document.getElementById("sub");
+            // while (container.hasChildNodes()) {
+            //     container.removeChild(container.lastChild);
+            // }
+            
+                // dym.appendChild(document.createTextNode("<label>NEW FIELD</label>"));
+
+                var hyper = document.createElement("Hr");
+                dym.appendChild(hyper);
+                
+
+                var subhead = document.createElement("H4");
+                subhead.innerHTML = "Subject";
+                dym.appendChild(subhead);
+
+                var newlabel = document.createElement("Label");
+                newlabel.innerHTML = "Course id";
+                dym.appendChild(newlabel);
+                dym.appendChild(document.createElement("br"));
+                var input = document.createElement("input");
+                input.type = "password";
+                input.classList.add("form-control");
+                
+                dym.class = "form-control";
+                dym.appendChild(input);
+                dym.appendChild(document.createElement("br"));
+
+
+        }        
 </script>
 
 <!-- /form end -->
