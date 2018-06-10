@@ -287,9 +287,6 @@ color: #fff;
   text-align: center;
 }
 
-.democlass{
-  background-image: -webkit-linear-gradient(left, rgba(66,133,244,.8), rgba(66, 133, 244,.6), rgba(0,0,0,0));
-}
 
 
 
@@ -435,26 +432,65 @@ dym.appendChild(newlabel);
 
                 var hyper = document.createElement("Hr");
                 dym.appendChild(hyper);
-                
+                hyper.setAttribute('style', 'border: 0;height: 1px;background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);');
+                counter();
 
                 var subhead = document.createElement("H4");
-                subhead.innerHTML = "Subject";
+                subhead.innerHTML = "Subject "+count;
                 dym.appendChild(subhead);
 
-                var newlabel = document.createElement("Label");
-                newlabel.innerHTML = "Course id";
-                dym.appendChild(newlabel);
+                var newlabel1 = document.createElement("Label");
+                newlabel1.innerHTML = "Course Title";
+                dym.appendChild(newlabel1);
                 dym.appendChild(document.createElement("br"));
-                var input = document.createElement("input");
-                input.type = "password";
-                input.classList.add("form-control");
+                var input1 = document.createElement("input");
+                input1.type = "text";
+                input1.classList.add("form-control");
                 
                 dym.class = "form-control";
-                dym.appendChild(input);
+                dym.appendChild(input1);
+                
+
+
+                var newlabel2 = document.createElement("Label");
+                newlabel2.innerHTML = "Course id";
+                dym.appendChild(newlabel2);
                 dym.appendChild(document.createElement("br"));
+                var input2 = document.createElement("input");
+                input2.type = "text";
+                input2.classList.add("form-control");
+                
+                dym.class = "form-control";
+                dym.appendChild(input2);
+                
 
 
-        }        
+                var newlabel3 = document.createElement("Label");
+                newlabel3.innerHTML = "Credit Hours";
+                dym.appendChild(newlabel3);
+                dym.appendChild(document.createElement("br"));
+                var input3 = document.createElement("input");
+                input3.type = "text";
+                input3.classList.add("form-control");
+                
+                dym.class = "form-control";
+                dym.appendChild(input3);
+                
+
+
+
+
+        } 
+
+        var count = 0;
+
+        function counter(){
+          if(! count) {
+          count = 0;
+        }
+
+        count++;
+        }       
 </script>
 
 <!-- /form end -->

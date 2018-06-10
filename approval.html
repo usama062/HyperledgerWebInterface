@@ -16,34 +16,6 @@
 
         <script type="text/javascript">
       // request permission on page load
-document.addEventListener('DOMContentLoaded', function () {
-  if (!Notification) {
-    alert('Desktop notifications not available in your browser. Try Chromium.'); 
-    return;
-  }
-
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-});
-
-function notifyMe() {
-  var e = document.getElementById('email').value;
-
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-  else {
-    var notification = new Notification('Login Notification', {
-      icon: 'images/logo.png',
-      body: e+" Logged In !",
-    });
-
-    notification.onclick = function () {
-      window.open("http://stackoverflow.com/a/13328397/1269037");      
-    };
-
-  }
-
-}
     </script>
 
     <title>Approval</title>
