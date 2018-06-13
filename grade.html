@@ -15,11 +15,10 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
         <script type="text/javascript">
-      // request permission on page load
 
     </script>
 
-    <title>Template</title>
+    <title>Grade</title>
     <style type="text/css">
       @media(max-width: 580px) {
       .limg {
@@ -290,6 +289,7 @@ color: #fff;
 
 
 
+
     </style>
   </head>
   <body>
@@ -333,149 +333,43 @@ color: #fff;
   <div class="container vertical-center" style="padding-bottom: 50px;padding-top: 50px;">
     <div style="background:#fff;width:70%;margin: auto;padding-top: 20px;padding:30px 50px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
   <form action="" method="POST" class="col-lg-12 col-md-12 col-sm-12">
-    <h3 style="margin-bottom: 20px;">Template</h3>
-<input type="text" class="form-control" name="" placeholder="Enter University name..."><br>
-<input type="text" class="form-control" name="" placeholder="Enter Department name..."><br>
-<input type="text" class="form-control" name="" placeholder="Enter Degree Type..."><br>
-  
+    <h3 style="margin-bottom: 20px;">Student Admission Form</h3>
+
+  <div class="form-group">
+    <label>Student Id</label>
+    <input type="text" class="form-control" id="email">
+  </div>
+
+  <div class="form-group">
+    <label>Student Name</label>
+    <input type="text" class="form-control" id="pass">
+  </div>
+
+  <div class="form-group">
+    <label>Student Contact no</label>
+    <input class="form-control" type="number">    
+  </div>
+
+  <div class="form-group">
+    <label>Student Roll no</label>
+    <input class="form-control" type="number">    
+  </div>
+
+  <div class="form-group">
+    <label>Student Enrollment no</label>
+    <input class="form-control" type="number">    
+  </div>
 
 
-<div >
-<div id="dynamic" class="form-group" > </div>
-<div id="sub" class="form-group" > </div>
-
- </div>
-  <!-- <button type="submit" class="btn btn-primary" onclick="generate();">Login</button> -->
-
-  <button type="button" class="btn btn-primary" onclick="generate();" >Create more Fields</button>
-  <button type="button" class="btn btn-primary" data-target="#myModal" data-toggle="modal" >Create Subject</button>
-
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+</div>
+  </div>
   
 
-</div>
-</div>
-  </div>
 
-<!-- Modal for new field-->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="">Enter Subject details</h4><button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form method="POST">
-          <label>Enter Course id</label>
-          <input id="id" class="form-control" type="text" name="field" required>
-
-          <label>Enter Course Title</label>
-          <input id="title" class="form-control" type="text" name="field" required>
-
-          <label>Enter Credit Hours</label>
-          <input id="hours" class="form-control" type="number" name="field" required>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" onclick="generate_subject();" data-dismiss="modal">Submit</button>
-      </div></form>
-    </div>
-
-  </div>
-</div>
-<!-- Modal for new field end -->
-
-<script type="text/javascript">
-
-  var abc ="";
-
-
-        function generate(){
-          
-            var dym = document.getElementById("dynamic");
-            // while (container.hasChildNodes()) {
-            //     container.removeChild(container.lastChild);
-            // }
-            
-            /*var get = document.getElementById("label").value;
-                // dym.appendChild(document.createTextNode("<label>NEW FIELD</label>"));
-                var newlabel = document.createElement("Label");
-newlabel.innerHTML = get;
-dym.appendChild(newlabel);
-                dym.appendChild(document.createElement("br"));*/
-                var input = document.createElement("input");
-                input.type = "text";
-                input.classList.add("form-control");
-                
-                dym.class = "form-control";
-                dym.appendChild(input);
-                dym.appendChild(document.createElement("br"));
-
-            
-        }
-
-
-        function generate_subject(){
-          
-            var dym = document.getElementById("sub");
-            // while (container.hasChildNodes()) {
-            //     container.removeChild(container.lastChild);
-            // }
-            
-                // dym.appendChild(document.createTextNode("<label>NEW FIELD</label>"));
-
-                var hyper = document.createElement("Hr");
-                dym.appendChild(hyper);
-                hyper.setAttribute('style', 'border: 0;height: 1px;background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);');
-                counter();
-
-                var subhead = document.createElement("H4");
-                subhead.innerHTML = "Subject "+count;
-                dym.appendChild(subhead);
-
-                var get_id = document.getElementById("id").value;
-                var get_title = document.getElementById("title").value;
-                var get_hours = document.getElementById("hours").value;
-                
-                var newlabel = document.createElement("Label");
-                newlabel.innerHTML = "Course id : "+get_id;
-                dym.appendChild(newlabel);
-                dym.appendChild(document.createElement("br"));
-
-                var newlabel2 = document.createElement("Label");
-                newlabel2.innerHTML = "Course Title : "+get_title;
-                dym.appendChild(newlabel2);
-                dym.appendChild(document.createElement("br"));
-
-                var newlabel3 = document.createElement("Label");
-                newlabel3.innerHTML = "Credit Hours : "+get_hours;
-                dym.appendChild(newlabel3);
-                dym.appendChild(document.createElement("br"));
-
-                document.getElementById("id").value = "";
-                document.getElementById("title").value = "";
-                document.getElementById("hours").value = "";
-
-
-
-
-
-
-
-        } 
-
-        var count = 0;
-
-        function counter(){
-          if(! count) {
-          count = 0;
-        }
-
-        count++;
-        }       
-</script>
 
 <!-- /form end -->
 
